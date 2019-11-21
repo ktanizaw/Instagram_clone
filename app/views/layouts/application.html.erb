@@ -7,13 +7,36 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
+
+
   <body>
+<header>
+  <div class="header-left">
+    <i></i>
+    <h1>イクラスタグラム</h1>
+  </div>
+  <div class="header-right">
+    <button type="button" name="button">
+      <%= link_to "新規投稿", new_picture_path(current_user.id) %>
+    </button>
+    <button type="button" name="button">
+      <%= link_to "Mypage", user_path(current_user.id) %>
+    </button>
+  </div>
+</header>
+
     <% flash.each do |key, value| %>
   <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
 
     <%= yield %>
+
+    <footer>
+      <p>© 2019 TANIZAWA CORPORATION.(Test Application)</p>
+    </footer>
+
   </body>
 </html>
