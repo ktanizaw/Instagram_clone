@@ -1,0 +1,26 @@
+<%= form_with(model: picture, local: true,) do |form| %>
+  <% if picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(picture.errors.count, "error") %></h2>
+
+      <ul>
+      <% picture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <strong>タイトル</strong>
+    <%= picture.text_field :title %>
+    <%= picture.label :image %>
+    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+    <%= picture.file_field :image %>
+    <%= picture.hidden_field :image_cache %>
+  </div>
+
+  <div class="actions">
+    <%= picture.submit %>
+  </div>
+<% end %>
