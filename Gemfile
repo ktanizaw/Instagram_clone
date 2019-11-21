@@ -20,6 +20,8 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'bcrypt', '3.1.11'
   gem 'dotenv-rails'
+  gem 'carrierwave'
+  gem 'mini_magick'
 end
 
 group :development do
