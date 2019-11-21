@@ -30,6 +30,7 @@ class PicturesController < ApplicationController
 
   def confirm
     @picture = Picture.new(picture_params)
+    render :new if @picture.invalid?
   end
 
   def update
@@ -56,7 +57,7 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-  params.require(:feed).permit(:image, :title, :image_cache)
+  params.require(:picture).permit(:image, :title, :image_cache)
   end
 
   def login_required
