@@ -22,6 +22,7 @@ class PicturesController < ApplicationController
     else
     @picture = current_user.pictures.build(picture_params)
       if @picture.save
+        PictureMailer.picture_mail(@picture).deliver
         redirect_to pictures_path, notice: "投稿しました！"
       else
         render 'new'
