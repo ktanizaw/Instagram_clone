@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy ]
+  before_action :authenticate_user, only: [:edit, :update, :destroy]
 
   def index
     @pictures = Picture.all
@@ -53,6 +54,8 @@ class PicturesController < ApplicationController
     end
   end
 
+  helper_method :current_user, :created_by?
+
   private
 
   def set_picture
@@ -63,8 +66,11 @@ class PicturesController < ApplicationController
     params.require(:picture).permit(:image, :content, :image_cache)
   end
 
-  def login_required
-    redirect_to new_session_path unless current_user
+  def authenticate_user
+    if current_user != @picture.user
+      flash[:notice] = "あなたの投稿では無いので操作できません"
+      redirect_to pictures_path
+    end
   end
 
 end

@@ -3,12 +3,13 @@
   <div class="container">
     <h1>New Pictures</h1>
     <div class="image-container">
-      <% @pictures.each do |picture| %>
+    <% @pictures.each do |picture| %>
       <div class="picture-icon">
       <i><%= image_tag "#{picture.image}", :size =>'80x80' %></i>
       <button type="button" class="btn btn-primary btn-md">
       <%= link_to '詳細', picture , :style=>"color:white;"%>
       </button>
+      <%  if current_user.id == picture.user.id %>
       <button type="button" class="btn btn-success btn-md">
       <%= link_to '編集', edit_picture_path(picture), :style=>"color:white;" %>
       </button>
@@ -16,8 +17,8 @@
       <%= link_to '削除', picture, method: :delete, data: { confirm: '本当に削除しますか？' }, :style=>"color:white;" %>
       </button>
       </div>
-
       <% end %>
+    <% end %>
     </div>
   </div>
 </div>
