@@ -4,18 +4,20 @@
 
   </div>
   <div class="user-information">
-    <h1><%= @user.name %>のページ</h1>
+    <i><%= image_tag "#{@user.image}", :size =>'150x150' %></i>
+    <h1><%= @user.name %></h1>
+    <button type="button" class="btn btn-success btn-md">
+      <%= link_to 'プロフィールを編集', edit_user_path(current_user.id), :style=>"color:white;" %>
+    </button>
     <p>メールアドレス: <%= @user.email %></p>
     <p>コメント: <%= @user.content %></p>
-    <div class="edit-tag">
-      <button type="button" class="btn btn-success btn-md">
-      </button>
+
+    <div>
     </div>
-  </div>
 </div>
+
 <div class="user-section">
-  <div class="">
-
-  </div>
-
+  <% @user.pictures.each do |picture| %>
+  <%= image_tag "#{@user.image}", :size =>'80x80' %>
+  <% end %>
 </div>
