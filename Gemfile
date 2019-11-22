@@ -22,6 +22,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'carrierwave'
   gem 'mini_magick'
+  gem 'faker'
 end
 
 group :development do
