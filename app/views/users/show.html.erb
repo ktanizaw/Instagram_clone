@@ -6,18 +6,23 @@
   <div class="user-information">
     <i><%= image_tag "#{@user.image}", :size =>'150x150' %></i>
     <h1><%= @user.name %></h1>
+    <p>メールアドレス: <%= @user.email %></p>
+    <p>コメント: <%= @user.content %></p>
     <button type="button" class="btn btn-success btn-md">
       <%= link_to 'プロフィールを編集', edit_user_path(current_user.id), :style=>"color:white;" %>
     </button>
-    <p>メールアドレス: <%= @user.email %></p>
-    <p>コメント: <%= @user.content %></p>
+    <button type="button" class="btn btn-success btn-md">
+      <%= link_to 'お気に入り', favorite_path(current_user.id), :style=>"color:white;" %>
+    </button>
 
     <div>
     </div>
 </div>
 
 <div class="user-section">
-  <% @user.pictures.each do |picture| %>
-  <%= image_tag "#{@user.image}", :size =>'80x80' %>
+
+  <% @favorites.each do |favorite| %>
+  <%= image_tag "#{favorite.picture.image}", :size =>'80x80' %>
   <% end %>
+
 </div>
