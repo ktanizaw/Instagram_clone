@@ -20,9 +20,9 @@ class PicturesController < ApplicationController
     if params[:back]
       render :new
     else
-    @picture = current_user.pictures.build(picture_params)
-      if @picture.save
-        PictureMailer.picture_mail(@picture).deliver
+    picture = current_user.pictures.build(picture_params)
+      if picture.save
+        PictureMailer.picture_mail(picture).deliver
         redirect_to pictures_path, notice: "投稿しました！"
       else
         render 'new'
@@ -59,7 +59,7 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-  params.require(:picture).permit(:image, :title, :image_cache)
+    params.require(:picture).permit(:image, :content, :image_cache)
   end
 
   def login_required
