@@ -9,7 +9,7 @@
       <button type="button" class="btn btn-primary btn-md">
       <%= link_to '詳細', picture , :style=>"color:white;"%>
       </button>
-      <%  if current_user.id == picture.user.id %>
+      <%  if current_user == picture.user.id %>
       <button type="button" class="btn btn-success btn-md">
       <%= link_to '編集', edit_picture_path(picture), :style=>"color:white;" %>
       </button>
