@@ -21,8 +21,8 @@
 
 <div class="user-section">
 
-  <% @favorites.each do |favorite| %>
-  <%= image_tag "#{favorite.picture.image}", :size =>'80x80' %>
+  <% @pictures.each do |picture| %>
+  <%= image_tag "#{picture.image}", :size =>'80x80' %>
   <% end %>
 
 </div>
