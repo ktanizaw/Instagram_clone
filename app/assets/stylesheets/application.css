@@ -96,3 +96,9 @@ form{
 .user-information {
   padding:50px 0 50px 0;
 }
+
+.field-content {
+  margin:0 auto;
+  width:300px;
+  padding:20px 0 20px 0;
+}
