@@ -80,27 +80,11 @@ footer {
   border:solid 5px;
 }
 
-.image-content{
-
-
-.favorite-section{
-  text-align: center;
-}
-
-.edit-section{
-  text-align: center;
-}
-
 .link-block {
   text-align: center;
 }
 
-label {
- display:block;
-}
-
 form{
-  margin: 0 auto;
   padding:30px 0 80px 0;
 }
 
