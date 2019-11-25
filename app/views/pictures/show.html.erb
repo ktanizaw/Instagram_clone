@@ -1,9 +1,9 @@
 <div class="title-text">
-<strong>コメント<%= @picture.content %></strong>
+<strong>◆コメント◆<br><%= @picture.content %></strong>
 </div>
 
 <i>
-<%= image_tag "#{@picture.image}", :size =>'80x80' %>
+<%= image_tag "#{@picture.image}", :size =>'300x300' %>
 </i>
 
 <% unless @picture.user_id == current_user.id %>

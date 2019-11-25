@@ -1,6 +1,10 @@
-<h1>お気に入り一覧</h1>
 <div class="favorite-section">
+  <h1>お気に入り一覧</h1>
   <% @favorites.each do |favorite| %>
-  <%= image_tag "#{favorite.picture.image}", :size =>'80x80' %>
+  <%= image_tag "#{favorite.picture.image}", :size =>'150x150' %>
   <% end %>
+</div>
+
+<div class="link-block">
+<%= link_to '戻る', user_path(current_user.id), :style=>"font-size:32px; font-weight:bold;" %>
 </div>

@@ -1,5 +1,5 @@
-<%= form_with(model: picture, local: true, url: choose_new_or_edit) do |form| %>
-  <% if picture.errors.any? %>
+<%= form_with(model: @picture, local: true, url: choose_new_or_edit) do |form| %>
+  <% if @picture.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(picture.errors.count, "error") %></h2>
 
@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <strong>内容</strong>
-    <%= form.text_area :content %>
     <%= form.label :image %>
     <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
+    <strong>コメント</strong>
+    <%= form.text_area :content %>
   </div>
 
   <div class="actions">

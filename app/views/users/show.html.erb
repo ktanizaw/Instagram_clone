@@ -4,7 +4,7 @@
 
   </div>
   <div class="user-information">
-    <i><%= image_tag "#{@user.image}", :size =>'150x150' %></i>
+    <i><%= image_tag "#{@user.image}", :size =>'250x250' %></i>
     <h1><%= @user.name %></h1>
     <p>メールアドレス: <%= @user.email %></p>
     <p>コメント: <%= @user.content %></p>
@@ -12,7 +12,7 @@
       <%= link_to 'プロフィールを編集', edit_user_path(current_user.id), :style=>"color:white;" %>
     </button>
     <button type="button" class="btn btn-success btn-md">
-      <%= link_to 'お気に入り', favorite_path(current_user.id), :style=>"color:white;" %>
+      <%= link_to 'お気に入り', favorites_path(current_user.id), :style=>"color:white;" %>
     </button>
 
     <div>

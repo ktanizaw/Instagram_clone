@@ -1,24 +1,41 @@
 
-<div class="main-wrapper">
-  <div class="container">
-    <h1>New Pictures</h1>
-    <div class="image-container">
-    <% @pictures.each do |picture| %>
-      <div class="picture-icon">
-      <i><%= image_tag "#{picture.image}", :size =>'80x80' %></i>
-      <button type="button" class="btn btn-primary btn-md">
-      <%= link_to '詳細', picture , :style=>"color:white;"%>
-      </button>
-      <%  if current_user == picture.user.id %>
-      <button type="button" class="btn btn-success btn-md">
-      <%= link_to '編集', edit_picture_path(picture), :style=>"color:white;" %>
-      </button>
-      <button type="button" class="btn btn-danger btn-md">
-      <%= link_to '削除', picture, method: :delete, data: { confirm: '本当に削除しますか？' }, :style=>"color:white;" %>
-      </button>
-      </div>
+  <div class="btn-content">
+    <button type="button" class="btn btn-warning btn-md">
+      <%= link_to "新規投稿", new_picture_path, :style=>"color:white;"%>
+    </button>
+    <button type="button" class="btn btn-success btn-md">
+      <%= link_to "Mypage", user_path(current_user.id), :style=>"color:white;" %>
+    </button>
+    <% if logged_in? %>
+    <button type="button" class="btn btn-danger btn-md">
+      <%= link_to "ログアウト", session_path(current_user.id), method: :delete , :style=>"color:white;"%>
+      <% else %>
+    <button type="button" class="btn btn-primary btn-md">
+      <%= link_to "新規登録", new_user_path, :style=>"color:white;" %>
+    </button>
+    <button type="button" class="btn btn-secondary btn-md">
+      <%= link_to "ログイン", new_session_path, :style=>"color:white;" %>
+    </button>
+    <% end %>
+  </div>
+    <h1>◆New Pictures◆</h1>
+    <div class="images">
+        <% @pictures.each do |picture| %>
+        <div class="image-content">
+        <div class="image-icon">
+          <i><%= image_tag "#{picture.image}", :size =>'350x350' %></i>
+          </div>
+          <button type="button" class="btn btn-primary btn-md">
+            <%= link_to '詳細', picture , :style=>"color:white;"%>
+          </button>
+      <% if current_user.id == picture.user.id %>
+          <button type="button" class="btn btn-success btn-md">
+            <%= link_to '編集', edit_picture_path(picture), :style=>"color:white;" %>
+          </button>
+          <button type="button" class="btn btn-danger btn-md">
+            <%= link_to '削除', picture, method: :delete, data: { confirm: '本当に削除しますか？' }, :style=>"color:white;" %>
+          </button>
+            </div>
+          </div>
       <% end %>
     <% end %>
-    </div>
-  </div>
-</div>

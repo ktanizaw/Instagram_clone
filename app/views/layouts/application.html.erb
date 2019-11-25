@@ -15,36 +15,19 @@
   <body>
 <header>
   <div class="header-left">
-    <i></i>
+    <i  class="fas fa-camera-retro fa-3x"></i>
     <h1><%= link_to 'イクラスタグラム', pictures_path, :style=>"" %></h1>
   </div>
-  <div class="header-right">
-    <button type="button" name="button">
-      <%= link_to "新規投稿", new_picture_path %>
-    </button>
-    <button type="button" name="button">
-      <%= link_to "Mypage", user_path(current_user.id) %>
-    </button>
-    <% if logged_in? %>
-    <button type="button" name="button">
-      <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-      <% else %>
-    <button type="button" name="button">
-      <%= link_to "新規登録", new_user_path %>
-    </button>
-    <button type="button" name="button">
-      <%= link_to "ログイン", new_session_path %>
-    </button>
-    <% end %>
-  </div>
+
 </header>
+<div class="main-wrapper">
 
     <% flash.each do |key, value| %>
   <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
 
     <%= yield %>
-
+  </div>
     <footer>
       <p>© 2019 TANIZAWA CORPORATION.(Test Application)</p>
     </footer>

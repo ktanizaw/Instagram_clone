@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -59,5 +58,4 @@ class UsersController < ApplicationController
   params.require(:user).permit(:name, :email, :content, :password, :image,
                                :password_confirmation)
   end
-
 end

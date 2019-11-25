@@ -14,3 +14,101 @@
  *= require_tree .
  *= require_self
  */
+
+/* body {
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ', 'ＭＳ Ｐゴシック','MS PGothic'
+} */
+
+header {
+  height: 80px;
+  border-bottom: groove 5px;
+}
+
+.header-left{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+header i{
+  float:left;
+  padding-top:20px;
+  padding-left:40px;
+}
+
+header h1 {
+  float:left;
+  padding-left:20px;
+  font-weight:bold;
+  color: #FF8C00;
+  background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer {
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border-top: groove 5px;
+  margin-top: auto;
+}
+
+.btn-content {
+  float:right;
+}
+
+.main-wrapper h1{
+  text-align: center;
+  padding-top:50px;
+}
+
+.main-wrapper {
+  background-color: rgba(245, 245, 245,0.9);
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.images {
+  text-align: center;
+}
+
+.image-icon{
+  margin:30px;
+  border:solid 5px;
+}
+
+.image-content{
+
+
+.favorite-section{
+  text-align: center;
+}
+
+.edit-section{
+  text-align: center;
+}
+
+.link-block {
+  text-align: center;
+}
+
+label {
+ display:block;
+}
+
+form{
+  margin: 0 auto;
+  padding:30px 0 80px 0;
+}
+
+.title-text {
+  font-size:32px;
+  padding:50px 0 50px 0;
+}
+
+.user-information {
+  padding:50px 0 50px 0;
+}
