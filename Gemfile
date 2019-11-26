@@ -16,13 +16,13 @@ gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
+gem 'pry-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'bcrypt', '3.1.11'
 
 group :development, :test do
-  gem 'sqlite3'
-  gem 'pry-rails'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'bcrypt', '3.1.11'
+  gem 'dotenv-rails'
 end
 
 group :development do
