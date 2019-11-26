@@ -1,0 +1,37 @@
+<h1>登録完了アカウント</h1>
+
+<table align="center" style="font-size:24px">
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>メールアドレス</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td>
+          <button type="button" class="btn btn-success btn-md">
+          <%= link_to '編集', edit_user_path(user), :style=>"color:white;" %>
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger btn-md">
+          <%= link_to '削除', user, method: :delete, data: { confirm: '本当に削除しますか?' }, :style=>"color:white;" %>
+          </button>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="link-block">
+<%= link_to 'ホーム画面へ', pictures_path, :style=>"font-size:24px;" %><br>
+<%= link_to '新規アカウント登録画面へ', new_user_path, :style=>"font-size:24px;" %>
+</div>
