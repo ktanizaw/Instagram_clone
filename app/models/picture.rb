@@ -4,7 +4,7 @@ class Picture < ApplicationRecord
   has_many :favorite_users, through: :favorites, source: :user
   belongs_to :user
   mount_uploader :image, ImageUploader
-  # def user
-  #   return User.find_by(id: self.user_id)
-  # end
+  def user
+    return User.find_by(id: self.user_id)
+  end
 end
