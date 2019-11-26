@@ -20,7 +20,9 @@ gem 'pry-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'bcrypt', '3.1.11'
-gem 'sqlite3', '~> 1.3.6'
+gem 'sqlite3', groups: %w(test development), require: false
+gem 'pg', groups: %w(production), require: false
+
 
 group :development, :test do
   gem 'dotenv-rails'
